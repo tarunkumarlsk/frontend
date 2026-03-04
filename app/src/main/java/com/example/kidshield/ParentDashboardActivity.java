@@ -11,6 +11,11 @@ public class ParentDashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_parent_dashboard);
 
+        // Child Profile Navigation
+        findViewById(R.id.card_emma).setOnClickListener(v -> {
+            startActivity(new Intent(this, ChildProfileActivity.class));
+        });
+
         // Quick Actions Navigation
         findViewById(R.id.card_location).setOnClickListener(v -> {
             startActivity(new Intent(this, MapActivity.class));
@@ -38,11 +43,11 @@ public class ParentDashboardActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.nav_alerts).setOnClickListener(v -> {
-            // startActivity(new Intent(this, AlertsActivity.class)); // Not built yet
+            startActivity(new Intent(this, AlertsActivity.class));
         });
 
         findViewById(R.id.nav_settings).setOnClickListener(v -> {
-            // startActivity(new Intent(this, SettingsActivity.class)); // Not built yet
+            startActivity(new Intent(this, SettingsActivity.class));
         });
     }
 }

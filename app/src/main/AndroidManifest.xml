@@ -27,12 +27,21 @@
         <activity android:name=".InstantActivity" />
         <activity android:name=".RoleActivity" />
         <activity android:name=".ParentLoginActivity" />
+        <activity android:name=".ChildLoginActivity" />
+        <activity android:name=".ChildDashboardActivity" />
+        <activity android:name=".SOSActivity" />
+        <activity android:name=".RequestTimeActivity" />
+        <activity android:name=".RequestSentActivity" />
+        <activity android:name=".MyAppsActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".ParentDashboardActivity" />
         <activity android:name=".AppControlActivity" />
         <activity android:name=".MapActivity" />
         <activity android:name=".SafeZonesActivity" />
+        <activity android:name=".AlertsActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".ChildProfileActivity" />
         
         <activity
             android:name=".MainActivity"

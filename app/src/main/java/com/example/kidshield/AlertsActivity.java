@@ -2,25 +2,14 @@ package com.example.kidshield;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MapActivity extends AppCompatActivity {
+public class AlertsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
-
-        ImageView btnBack = findViewById(R.id.btn_back);
-        btnBack.setOnClickListener(v -> finish());
-
-        // Manage Safe Zones Button
-        TextView btnManageSafeZones = findViewById(R.id.btn_manage_safe_zones);
-        btnManageSafeZones.setOnClickListener(v -> {
-            startActivity(new Intent(this, SafeZonesActivity.class));
-        });
+        setContentView(R.layout.activity_alerts);
 
         // Bottom Navigation
         findViewById(R.id.nav_home).setOnClickListener(v -> {
@@ -29,16 +18,12 @@ public class MapActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.nav_map).setOnClickListener(v -> {
-            // Already on Map
+            startActivity(new Intent(this, MapActivity.class));
+            finish();
         });
 
         findViewById(R.id.nav_controls).setOnClickListener(v -> {
             startActivity(new Intent(this, AppControlActivity.class));
-            finish();
-        });
-
-        findViewById(R.id.nav_alerts).setOnClickListener(v -> {
-            startActivity(new Intent(this, AlertsActivity.class));
             finish();
         });
 

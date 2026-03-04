@@ -2,7 +2,6 @@ package com.example.kidshield;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.card.MaterialCardView;
 
@@ -22,11 +21,10 @@ public class RoleActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
-        // Navigate to Child specific screen (if built) or show a message
+        // Navigate to Child Login screen
         cardChild.setOnClickListener(v -> {
-            Toast.makeText(this, "Child setup selected", Toast.LENGTH_SHORT).show();
-            // Typically would navigate to a ChildActivity or MainActivity
-            startActivity(new Intent(RoleActivity.this, MainActivity.class));
+            Intent intent = new Intent(RoleActivity.this, ChildLoginActivity.class);
+            startActivity(intent);
         });
     }
 }

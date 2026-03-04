@@ -29,5 +29,19 @@ public class AppControlActivity extends AppCompatActivity {
             startActivity(new Intent(this, MapActivity.class));
             finish();
         });
+
+        findViewById(R.id.nav_controls).setOnClickListener(v -> {
+            // Already on Controls
+        });
+
+        findViewById(R.id.nav_alerts).setOnClickListener(v -> {
+            startActivity(new Intent(this, AlertsActivity.class));
+            finish();
+        });
+
+        findViewById(R.id.nav_settings).setOnClickListener(v -> {
+            startActivity(new Intent(this, SettingsActivity.class));
+            finish();
+        });
     }
 }

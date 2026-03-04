@@ -2,24 +2,18 @@ package com.example.kidshield;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageView;
-import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MapActivity extends AppCompatActivity {
+public class SettingsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
+        setContentView(R.layout.activity_settings);
 
-        ImageView btnBack = findViewById(R.id.btn_back);
-        btnBack.setOnClickListener(v -> finish());
-
-        // Manage Safe Zones Button
-        TextView btnManageSafeZones = findViewById(R.id.btn_manage_safe_zones);
-        btnManageSafeZones.setOnClickListener(v -> {
-            startActivity(new Intent(this, SafeZonesActivity.class));
+        // Settings Actions
+        findViewById(R.id.setting_child_profiles).setOnClickListener(v -> {
+            startActivity(new Intent(this, ChildProfileActivity.class));
         });
 
         // Bottom Navigation
@@ -29,7 +23,8 @@ public class MapActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.nav_map).setOnClickListener(v -> {
-            // Already on Map
+            startActivity(new Intent(this, MapActivity.class));
+            finish();
         });
 
         findViewById(R.id.nav_controls).setOnClickListener(v -> {
@@ -42,9 +37,9 @@ public class MapActivity extends AppCompatActivity {
             finish();
         });
 
-        findViewById(R.id.nav_settings).setOnClickListener(v -> {
-            startActivity(new Intent(this, SettingsActivity.class));
-            finish();
+        findViewById(R.id.btn_sign_out).setOnClickListener(v -> {
+            startActivity(new Intent(this, ParentLoginActivity.class));
+            finishAffinity();
         });
     }
 }
