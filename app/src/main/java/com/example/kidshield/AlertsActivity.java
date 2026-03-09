@@ -2,6 +2,7 @@ package com.example.kidshield;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AlertsActivity extends AppCompatActivity {
@@ -11,25 +12,47 @@ public class AlertsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alerts);
 
-        // Bottom Navigation
-        findViewById(R.id.nav_home).setOnClickListener(v -> {
-            startActivity(new Intent(this, ParentDashboardActivity.class));
-            finishAffinity();
-        });
+        setupBottomNavigation();
+    }
 
-        findViewById(R.id.nav_map).setOnClickListener(v -> {
-            startActivity(new Intent(this, MapActivity.class));
-            finish();
-        });
+    private void setupBottomNavigation() {
+        View home = findViewById(R.id.nav_home);
+        if (home != null) {
+            home.setOnClickListener(v -> {
+                startActivity(new Intent(this, ParentDashboardActivity.class));
+                finishAffinity();
+            });
+        }
 
-        findViewById(R.id.nav_controls).setOnClickListener(v -> {
-            startActivity(new Intent(this, AppControlActivity.class));
-            finish();
-        });
+        View map = findViewById(R.id.nav_map);
+        if (map != null) {
+            map.setOnClickListener(v -> {
+                startActivity(new Intent(this, MapActivity.class));
+                finish();
+            });
+        }
 
-        findViewById(R.id.nav_settings).setOnClickListener(v -> {
-            startActivity(new Intent(this, SettingsActivity.class));
-            finish();
-        });
+        View controls = findViewById(R.id.nav_controls);
+        if (controls != null) {
+            controls.setOnClickListener(v -> {
+                startActivity(new Intent(this, AppControlActivity.class));
+                finish();
+            });
+        }
+
+        View alerts = findViewById(R.id.nav_alerts);
+        if (alerts != null) {
+            alerts.setOnClickListener(v -> {
+                // Already on Alerts
+            });
+        }
+
+        View settings = findViewById(R.id.nav_settings);
+        if (settings != null) {
+            settings.setOnClickListener(v -> {
+                startActivity(new Intent(this, SettingsActivity.class));
+                finish();
+            });
+        }
     }
 }

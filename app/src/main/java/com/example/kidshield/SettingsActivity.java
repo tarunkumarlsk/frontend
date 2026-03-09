@@ -2,6 +2,7 @@ package com.example.kidshield;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class SettingsActivity extends AppCompatActivity {
@@ -12,34 +13,84 @@ public class SettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_settings);
 
         // Settings Actions
-        findViewById(R.id.setting_child_profiles).setOnClickListener(v -> {
-            startActivity(new Intent(this, ChildProfileActivity.class));
-        });
+        View childProfiles = findViewById(R.id.setting_child_profiles);
+        if (childProfiles != null) {
+            childProfiles.setOnClickListener(v -> {
+                startActivity(new Intent(this, ChildProfileActivity.class));
+            });
+        }
+
+        View addDevice = findViewById(R.id.setting_add_device);
+        if (addDevice != null) {
+            addDevice.setOnClickListener(v -> {
+                startActivity(new Intent(this, AddNewDeviceActivity.class));
+            });
+        }
+
+        View notifications = findViewById(R.id.setting_notifications);
+        if (notifications != null) {
+            notifications.setOnClickListener(v -> {
+                startActivity(new Intent(this, NotificationsActivity.class));
+            });
+        }
+
+        View helpSupport = findViewById(R.id.setting_help);
+        if (helpSupport != null) {
+            helpSupport.setOnClickListener(v -> {
+                startActivity(new Intent(this, HelpSupportActivity.class));
+            });
+        }
 
         // Bottom Navigation
-        findViewById(R.id.nav_home).setOnClickListener(v -> {
-            startActivity(new Intent(this, ParentDashboardActivity.class));
-            finishAffinity();
-        });
+        setupBottomNavigation();
 
-        findViewById(R.id.nav_map).setOnClickListener(v -> {
-            startActivity(new Intent(this, MapActivity.class));
-            finish();
-        });
+        View signOut = findViewById(R.id.btn_sign_out);
+        if (signOut != null) {
+            signOut.setOnClickListener(v -> {
+                startActivity(new Intent(this, ParentLoginActivity.class));
+                finishAffinity();
+            });
+        }
+    }
 
-        findViewById(R.id.nav_controls).setOnClickListener(v -> {
-            startActivity(new Intent(this, AppControlActivity.class));
-            finish();
-        });
+    private void setupBottomNavigation() {
+        View home = findViewById(R.id.nav_home);
+        if (home != null) {
+            home.setOnClickListener(v -> {
+                startActivity(new Intent(this, ParentDashboardActivity.class));
+                finishAffinity();
+            });
+        }
 
-        findViewById(R.id.nav_alerts).setOnClickListener(v -> {
-            startActivity(new Intent(this, AlertsActivity.class));
-            finish();
-        });
+        View map = findViewById(R.id.nav_map);
+        if (map != null) {
+            map.setOnClickListener(v -> {
+                startActivity(new Intent(this, MapActivity.class));
+                finish();
+            });
+        }
 
-        findViewById(R.id.btn_sign_out).setOnClickListener(v -> {
-            startActivity(new Intent(this, ParentLoginActivity.class));
-            finishAffinity();
-        });
+        View controls = findViewById(R.id.nav_controls);
+        if (controls != null) {
+            controls.setOnClickListener(v -> {
+                startActivity(new Intent(this, AppControlActivity.class));
+                finish();
+            });
+        }
+
+        View alerts = findViewById(R.id.nav_alerts);
+        if (alerts != null) {
+            alerts.setOnClickListener(v -> {
+                startActivity(new Intent(this, AlertsActivity.class));
+                finish();
+            });
+        }
+
+        View settings = findViewById(R.id.nav_settings);
+        if (settings != null) {
+            settings.setOnClickListener(v -> {
+                // Already on Settings
+            });
+        }
     }
 }

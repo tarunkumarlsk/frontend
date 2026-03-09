@@ -33,6 +33,12 @@
         <activity android:name=".RequestTimeActivity" />
         <activity android:name=".RequestSentActivity" />
         <activity android:name=".MyAppsActivity" />
+        <activity android:name=".ConnectedActivity" />
+        <activity android:name=".AddNewDeviceActivity" />
+        <activity android:name=".DeviceLinkedActivity" />
+        <activity android:name=".NotificationsActivity" />
+        <activity android:name=".HelpSupportActivity" />
+        <activity android:name=".TimeLimitsActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".ParentDashboardActivity" />

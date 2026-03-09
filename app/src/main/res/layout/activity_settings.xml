@@ -131,6 +131,7 @@
 
                     <!-- Add New Device -->
                     <RelativeLayout
+                        android:id="@+id/setting_add_device"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?android:attr/selectableItemBackground"
@@ -165,6 +166,7 @@
 
                     <!-- Notifications -->
                     <RelativeLayout
+                        android:id="@+id/setting_notifications"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="?android:attr/selectableItemBackground"
@@ -198,43 +200,12 @@
                     </RelativeLayout>
 
                     <!-- Security & Privacy -->
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="?android:attr/selectableItemBackground"
-                        android:padding="12dp">
-                        <ImageView
-                            android:id="@+id/icon_security"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            android:background="@drawable/rounded_logo_bg"
-                            android:backgroundTint="#FFF7ED"
-                            android:padding="10dp"
-                            android:src="@drawable/ic_shield"
-                            app:tint="#F97316" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
-                            android:layout_marginStart="16dp"
-                            android:layout_toEndOf="@id/icon_security"
-                            android:text="Security &amp; Privacy"
-                            android:textColor="#111827"
-                            android:textStyle="bold" />
-                        <ImageView
-                            android:layout_width="20dp"
-                            android:layout_height="20dp"
-                            android:layout_alignParentEnd="true"
-                            android:layout_centerVertical="true"
-                            android:src="@drawable/ic_back"
-                            android:rotation="180"
-                            app:tint="#D1D5DB" />
-                    </RelativeLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <!-- Help Card -->
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/setting_help"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
